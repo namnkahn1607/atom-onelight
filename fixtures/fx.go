@@ -8,6 +8,7 @@ import (
 	"sync/atomic"
 	"time"
 	. "unsafe" // Dot import
+	"C"
 )
 
 // --- Constants, Itoa, Built-in Readonly ---
