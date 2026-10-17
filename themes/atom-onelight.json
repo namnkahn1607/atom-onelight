@@ -1,0 +1,178 @@
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "Atom's One Light",
+  "type": "light",
+  "semanticHighlighting": true,
+  "colors": {
+    "editor.background": "#eff1f5",
+    "editor.foreground": "#383a42"
+  },
+  "semanticTokenColors": {
+    "bracket": "#383a42",
+    "class": "#df8e1d",
+    "class.constructorOrDestructor": "#4078f2",
+    "enum": "#df8e1d",
+    "enumMember": "#ca1243",
+    "function": "#4078f2",
+    "interface": "#df8e1d",
+    "label": "#383a42",
+    "macro": "#ca1243",
+    "method": "#4078f2",
+    "modifier": "#a626a4",
+    "namespace": "#383a42",
+    "operator": "#e45649",
+    "parameter": "#0184bc",
+    "property": "#383a42",
+    "struct": "#df8e1d",
+    "type": "#df8e1d",
+    "typeParameter": "#df8e1d",
+    "variable": "#383a42"
+  },
+  "tokenColors": [
+    {
+      "settings": {
+        "foreground": "#383a42",
+        "background": "#eff1f5"
+      }
+    },
+    {
+      "name": "affix",
+      "scope": [
+        "keyword.other.unit"
+      ],
+      "settings": {
+        "foreground": "#e45649"
+      }
+    },
+    {
+      "name": "comment",
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#a0a1a7"
+      }
+    },
+    {
+      "name": "declarator",
+      "scope": [
+        "storage.modifier.pointer",
+        "storage.modifier.reference"
+      ],
+      "settings": {
+        "foreground": "#e45649"
+      }
+    },
+    {
+      "name": "enumMember",
+      "scope": [
+        "variable.other.enummember"
+      ],
+      "settings": {
+        "foreground": "#ca1243"
+      }
+    },
+    {
+      "name": "escape",
+      "scope": [
+        "constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#ca1243"
+      }
+    },
+    {
+      "name": "function",
+      "scope": [
+        "entity.name.function"
+      ],
+      "settings": {
+        "foreground": "#4078f2"
+      }
+    },
+    {
+      "name": "keyword",
+      "scope": [
+        "constant.language",
+        "entity.other.attribute-name",
+        "keyword.control",
+        "keyword.other",
+        "storage.modifier",
+        "storage.type",
+        "support.other.attribute",
+        "variable.language"
+      ],
+      "settings": {
+        "foreground": "#a626a4"
+      }
+    },
+    {
+      "name": "macro",
+      "scope": [
+        "entity.name.function.preprocessor"
+      ],
+      "settings": {
+        "foreground": "#ca1243"
+      }
+    },
+    {
+      "name": "number",
+      "scope": [
+        "constant.numeric"
+      ],
+      "settings": {
+        "foreground": "#df8e1d"
+      }
+    },
+    {
+      "name": "operator",
+      "scope": [
+        "entity.name.operator",
+        "keyword.operator"
+      ],
+      "settings": {
+        "foreground": "#e45649"
+      }
+    },
+    {
+      "name": "parameter",
+      "scope": [
+        "variable.parameter"
+      ],
+      "settings": {
+        "foreground": "#0184bc"
+      }
+    },
+    {
+      "name": "plain",
+      "scope": [
+        "variable.parameter.capture",
+        "variable.parameter.preprocessor"
+      ],
+      "settings": {
+        "foreground": "#383a42"
+      }
+    },
+    {
+      "name": "string",
+      "scope": [
+        "string"
+      ],
+      "settings": {
+        "foreground": "#50a14f"
+      }
+    },
+    {
+      "name": "type",
+      "scope": [
+        "entity.name.operator.type",
+        "entity.name.type",
+        "storage.type.built-in",
+        "storage.type.return-type"
+      ],
+      "settings": {
+        "foreground": "#df8e1d"
+      }
+    }
+  ]
+}
