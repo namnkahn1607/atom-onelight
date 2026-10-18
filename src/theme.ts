@@ -9,6 +9,7 @@ export type TokenColor = {
 export type Theme = {
     $schema: string;
     name: string;
+    author: string;
     type: 'light';
     semanticHighlighting: true;
     colors: Record<string, string>;
@@ -17,6 +18,7 @@ export type Theme = {
 };
 
 export const THEME_NAME = "Atom's One Light";
+export const AUTHOR = 'namnkahn1607';
 
 function claim(seen: Map<string, Role>, selector: string, role: Role, where: string) {
     const prev = seen.get(selector);
@@ -43,9 +45,7 @@ export function buildTheme(langs: Record<string, Bindings>, colorOf: (role: Role
             }
         }
     }
-    const tokenColors: TokenColor[] = [{
-        settings: { foreground: colorOf('plain'), background: palette.bg }
-    }];
+    const tokenColors: TokenColor[] = [{ settings: { foreground: colorOf('plain') } }];
     for (const role of Object.keys(roles) as Role[]) {
         const scopes = tm.get(role);
         if (scopes?.size) {
@@ -63,6 +63,7 @@ export function buildTheme(langs: Record<string, Bindings>, colorOf: (role: Role
     return {
         $schema: 'vscode://schemas/color-theme',
         name: THEME_NAME,
+        author: AUTHOR,
         type: 'light',
         semanticHighlighting: true,
         colors: { 'editor.background': palette.bg, 'editor.foreground': palette.fg },

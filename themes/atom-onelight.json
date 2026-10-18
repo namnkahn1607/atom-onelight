@@ -1,6 +1,7 @@
 {
   "$schema": "vscode://schemas/color-theme",
   "name": "Atom's One Light",
+  "author": "namnkahn1607",
   "type": "light",
   "semanticHighlighting": true,
   "colors": {
@@ -31,8 +32,7 @@
   "tokenColors": [
     {
       "settings": {
-        "foreground": "#383a42",
-        "background": "#eff1f5"
+        "foreground": "#383a42"
       }
     },
     {
