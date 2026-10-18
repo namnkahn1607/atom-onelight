@@ -30,6 +30,7 @@ export const cpp : Bindings = {
         semantic: ['operator'],
     },
     parameter: { tm: ['variable.parameter'], semantic: ['parameter'] },
+    placeholder: { tm: ['constant.other.placeholder'] },
     plain: {
         tm: ['variable.parameter.preprocessor', 'variable.parameter.capture'],
         semantic: ['bracket', 'label', 'namespace', 'property', 'variable'],

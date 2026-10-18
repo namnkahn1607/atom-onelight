@@ -13,6 +13,7 @@ export const roles = {
     number: 'yellow',
     operator: 'orange',
     parameter: 'cyan',
+    placeholder: 'red',
     plain: 'fg',
     string: 'green',
     type: 'yellow',  // explicit "no color"
