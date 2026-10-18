@@ -1,4 +1,26 @@
 {
+  "name": "atoms-one-light",
+  "displayName": "Atom's One Light",
+  "description": "A personal light color theme, inspired by Atom's One Dark.",
+  "version": "0.0.1",
+  "publisher": "namnkahn1607",
+  "author": "namnkahn1607",
+  "engines": { "vscode": "^1.105.0" },
+  "categories": [ "Themes" ],
+  "contributes": {
+    "themes": [
+        {
+            "label": "Atom's One Light",
+            "uiTheme": "vs",
+            "path": "./themes/atoms-one-light.json"
+        }
+    ]
+  },
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "check": "tsc --noEmit",
+    "package": "npm run build && vsce package --skip-license --allow-missing-repository"
+  },
   "devDependencies": {
     "@types/node": "^26.6.5",
     "tsx": "^4.23.15",
