@@ -5,15 +5,19 @@
   "version": "0.0.1",
   "publisher": "namnkahn1607",
   "author": "namnkahn1607",
-  "engines": { "vscode": "^1.105.0" },
-  "categories": [ "Themes" ],
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Themes"
+  ],
   "contributes": {
     "themes": [
-        {
-            "label": "Atom's One Light",
-            "uiTheme": "vs",
-            "path": "./themes/atoms-one-light.json"
-        }
+      {
+        "label": "Atom's One Light",
+        "uiTheme": "vs",
+        "path": "./themes/atoms-one-light.json"
+      }
     ]
   },
   "scripts": {
