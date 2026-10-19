@@ -11,7 +11,6 @@
   "categories": [
     "Themes"
   ],
-  "icon": "assets/logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/namnkahn1607/atom-onelight"
@@ -27,9 +26,8 @@
   },
   "scripts": {
     "build": "tsx src/build.ts",
-    "icon": "tsx utils/logo.ts",
     "check": "tsc --noEmit",
-    "package": "npm run build && npm run icon && vsce package --skip-license"
+    "package": "npm run build && vsce package --skip-license"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",
