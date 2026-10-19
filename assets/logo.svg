@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 424" role="img" aria-labelledby="title desc">
+  <title id="title">Atom One Light multicolor</title>
+  <rect width="472" height="424" fill="#eff1f5"/>
+  <g fill="none" stroke-width="19" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Stroke 1: left-to-right curve -->
+    <path d="M62 252 C14 225 4 191 76 163 C94 156 109 150 123 145" stroke="#4078f2"/>
+    <path d="M123 145 C145 139 168 136 190 135" stroke="#383a42"/>
+    <path d="M190 135 C279 126 377 150 427 188 C458 211 447 246 403 269" stroke="#ca1243"/>
+
+    <!-- Stroke 2: upper-left to lower-right loop -->
+    <path d="M205 36 C160 2 130 4 115 37 C104 62 110 105 123 145" stroke="#50a14f"/>
+    <path d="M123 145 C128 164 135 184 143 202" stroke="#0184bc"/>
+    <path d="M143 202 C183 283 238 354 287 391 C314 411 333 416 346 398 C371 363 353 267 314 184" stroke="#e45649"/>
+
+    <!-- Stroke 3: lower-left rising to upper-right loop -->
+    <path d="M192 375 C147 407 111 419 96 390 C75 349 111 245 143 202" stroke="#a626a4"/>
+    <path d="M143 202 C157 181 174 155 190 135" stroke="#a0a1a7"/>
+    <path d="M190 135 C225 92 261 55 297 33 C330 12 354 13 369 36 C380 56 375 80 367 101" stroke="#df8e1d"/>
+  </g>
+</svg>
