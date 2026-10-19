@@ -11,6 +11,10 @@
   "categories": [
     "Themes"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/namnkahn1607/atom-onelight"
+  },
   "contributes": {
     "themes": [
       {
@@ -23,7 +27,7 @@
   "scripts": {
     "build": "tsx src/build.ts",
     "check": "tsc --noEmit",
-    "package": "npm run build && vsce package --skip-license --allow-missing-repository"
+    "package": "npm run build && vsce package --skip-license"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
