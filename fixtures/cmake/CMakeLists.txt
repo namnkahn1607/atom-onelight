@@ -1,4 +1,4 @@
-# fixtures/fx.cmake
+# fixtures/cmake/CMakeLists.txt
 
 cmake_minimum_required(VERSION 3.25 FATAL_ERROR)
 project(demo VERSION 1.2.3 LANGUAGES CXX C)
@@ -58,9 +58,3 @@ find_package(fmt 10.0 REQUIRED CONFIG)
 include(GNUInstallDirs)
 install(TARGETS demo RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 add_test(NAME t1 COMMAND demo --flag=1 0x1F 3.14)
-
-message("a" "b"c)                     # quoted arg immediately followed by unquoted
-set(X "${A_${B}}")                    # nested var ref
-set(Y $<IF:$<BOOL:${Z}>,a;b,c>)       # nested genex with ; and ,
-if(${X} STREQUAL "")                  # old-style deref in condition
-message([=[ ]] still inside ]=])      # bracket-level mismatch
