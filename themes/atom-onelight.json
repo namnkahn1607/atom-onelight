@@ -6,18 +6,26 @@
   "semanticHighlighting": true,
   "colors": {
     "editor.background": "#eff1f5",
-    "editor.foreground": "#383a42"
+    "editor.foreground": "#383a42",
+    "editorBracketHighlight.foreground1": "#383a42",
+    "editorBracketHighlight.foreground2": "#383a42",
+    "editorBracketHighlight.foreground3": "#383a42",
+    "editorBracketHighlight.foreground4": "#383a42",
+    "editorBracketHighlight.foreground5": "#383a42",
+    "editorBracketHighlight.foreground6": "#383a42"
   },
   "semanticTokenColors": {
     "bracket": "#383a42",
     "class": "#df8e1d",
     "class.constructorOrDestructor": "#4078f2",
+    "class.deduced": "#a626a4",
     "enum": "#df8e1d",
-    "enumMember": "#ca1243",
+    "enum.deduced": "#a626a4",
+    "enumMember": "#383a42",
     "function": "#4078f2",
     "interface": "#df8e1d",
     "label": "#383a42",
-    "macro": "#ca1243",
+    "macro": "#4078f2",
     "method": "#4078f2",
     "modifier": "#a626a4",
     "namespace": "#383a42",
@@ -26,6 +34,8 @@
     "property": "#383a42",
     "struct": "#df8e1d",
     "type": "#df8e1d",
+    "type.deduced": "#a626a4",
+    "type.defaultLibrary.fileScope": "#a626a4",
     "typeParameter": "#df8e1d",
     "variable": "#383a42"
   },
@@ -45,12 +55,22 @@
       }
     },
     {
+      "name": "attribute",
+      "scope": [
+        "support.other.attribute"
+      ],
+      "settings": {
+        "foreground": "#0184bc"
+      }
+    },
+    {
       "name": "comment",
       "scope": [
         "comment"
       ],
       "settings": {
-        "foreground": "#a0a1a7"
+        "foreground": "#a0a1a7",
+        "fontStyle": "italic"
       }
     },
     {
@@ -69,7 +89,7 @@
         "variable.other.enummember"
       ],
       "settings": {
-        "foreground": "#ca1243"
+        "foreground": "#383a42"
       }
     },
     {
@@ -94,12 +114,12 @@
       "name": "keyword",
       "scope": [
         "constant.language",
+        "entity.name.operator.type",
         "entity.other.attribute-name",
         "keyword.control",
         "keyword.other",
         "storage.modifier",
         "storage.type",
-        "support.other.attribute",
         "variable.language"
       ],
       "settings": {
@@ -112,7 +132,7 @@
         "entity.name.function.preprocessor"
       ],
       "settings": {
-        "foreground": "#ca1243"
+        "foreground": "#4078f2"
       }
     },
     {
@@ -155,6 +175,7 @@
     {
       "name": "plain",
       "scope": [
+        "punctuation.section.attribute",
         "variable.parameter.capture",
         "variable.parameter.preprocessor"
       ],
@@ -174,10 +195,7 @@
     {
       "name": "type",
       "scope": [
-        "entity.name.operator.type",
-        "entity.name.type",
-        "storage.type.built-in",
-        "storage.type.return-type"
+        "entity.name.type"
       ],
       "settings": {
         "foreground": "#df8e1d"

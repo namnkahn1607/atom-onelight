@@ -1,10 +1,10 @@
 import { palette } from "./palette";
-import { roles, type Bindings, type Role } from "./roles";
+import { fontStyles, roles, type Bindings, type Role } from "./roles";
 
 export type TokenColor = {
     name?: string;
     scope?: string[]; 
-    settings: { foreground?: string; background?: string }
+    settings: { foreground?: string; fontStyle?: string }
 };
 export type Theme = {
     $schema: string;
@@ -52,21 +52,34 @@ export function buildTheme(langs: Record<string, Bindings>, colorOf: (role: Role
             tokenColors.push({
                 name: role,
                 scope: [...scopes].sort(),
-                settings: { foreground: colorOf(role) }
+                settings: {
+                    foreground: colorOf(role),
+                    ...(fontStyles[role] && { fontStyle: fontStyles[role] })
+                }
             });
         }
     }
+
+    const bracketLevels = Object.fromEntries(
+        [1, 2, 3, 4, 5, 6].map((i) => [`editorBracketHighlight.foreground${i}`, palette.fg])
+    )
+
     const semanticTokenColors: Record<string, string> = {};
     for (const [selector, role] of [...sem].sort(([a], [b]) => a.localeCompare(b))) {
         semanticTokenColors[selector] = colorOf(role);
     }
+
     return {
         $schema: 'vscode://schemas/color-theme',
         name: THEME_NAME,
         author: AUTHOR,
         type: 'light',
         semanticHighlighting: true,
-        colors: { 'editor.background': palette.bg, 'editor.foreground': palette.fg },
+        colors: {
+            'editor.background': palette.bg,
+            'editor.foreground': palette.fg,
+            ...bracketLevels
+        },
         semanticTokenColors,
         tokenColors,
     };

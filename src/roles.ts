@@ -3,13 +3,14 @@ import type { Hue } from './palette'
 // Role = meaning (language-agnostic). Hue = presentation.
 export const roles = {
     affix: 'orange',  // number prefix/suffix
+    attribute: 'cyan',
     comment: 'gray',
     declarator: 'orange',  // pointer/reference declrator: * &
-    enumMember: 'red',
+    enumMember: 'fg',
     escape: 'red',
     function: 'blue',
     keyword: 'purple',
-    macro: 'red',
+    macro: 'blue',
     number: 'yellow',
     operator: 'orange',
     parameter: 'cyan',
@@ -20,6 +21,10 @@ export const roles = {
 } as const satisfies Record<string, Hue>;
 
 export type Role = keyof typeof roles;
+
+export const fontStyles: Partial<Record<Role, 'italic' | 'bold' | 'underline'>> = {
+    comment: 'italic',
+};
 
 // tm: TextMate scope selectors (prefix match, deeper selector wins)
 // semantic: LSP selectors `type[.modifier]*`

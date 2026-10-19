@@ -2,6 +2,7 @@ import type { Bindings } from "../roles";
 
 export const cpp : Bindings = {
     affix: { tm: ['keyword.other.unit'] },
+    attribute: { tm: ['support.other.attribute'] },
     comment: { tm: ['comment'] },
     declarator: { tm: ['storage.modifier.pointer', 'storage.modifier.reference'] },
     enumMember: { tm: ['variable.other.enummember'], semantic: ['enumMember'] },
@@ -18,10 +19,14 @@ export const cpp : Bindings = {
             'storage.modifier',  // const, constexpr, static, inline, virtual, noexcept, override
             'constant.language',  // true, false, nullptr
             'variable.language',  // this
-            'support.other.attribute',  // [[...]]
-            'entity.other.attribute-name',
+            'entity.other.attribute-name',  // #pragma once
+            'entity.name.operator.type',  // operator bool
         ],
-        semantic: ['modifier'],  // final, override
+        semantic: [
+            'modifier',
+            'type.deduced', 'class.deduced', 'enum.deduced',  // auto, decltype
+            'type.defaultLibrary.fileScope',  // size_t, uint8_t, int32_t, ptrdiff_t
+        ],
     },
     macro: { tm: ['entity.name.function.preprocessor'], semantic: ['macro'] },
     number: { tm: ['constant.numeric'] },
@@ -32,17 +37,12 @@ export const cpp : Bindings = {
     parameter: { tm: ['variable.parameter'], semantic: ['parameter'] },
     placeholder: { tm: ['constant.other.placeholder'] },
     plain: {
-        tm: ['variable.parameter.preprocessor', 'variable.parameter.capture'],
+        tm: ['variable.parameter.preprocessor', 'variable.parameter.capture', 'punctuation.section.attribute'],
         semantic: ['bracket', 'label', 'namespace', 'property', 'variable'],
     },
     string: { tm: ['string'] },
     type: {
-        tm: [
-            'entity.name.type',
-            'storage.type.built-in',  // primitives
-            'storage.type.return-type',  // `-> T` of lambdas
-            'entity.name.operator.type'
-        ],
+        tm: ['entity.name.type'],
         semantic: ['type', 'class', 'enum', 'struct', 'interface', 'typeParameter'],
     },
 }
