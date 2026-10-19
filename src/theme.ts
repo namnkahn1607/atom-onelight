@@ -1,5 +1,6 @@
 import { palette } from "./palette";
 import { fontStyles, roles, type Bindings, type Role } from "./roles";
+import { gitColors, workbenchColors } from './chrome';
 
 export type TokenColor = {
     name?: string;
@@ -75,14 +76,25 @@ export function buildTheme(langs: Record<string, Bindings>, colorOf: (role: Role
         author: AUTHOR,
         type: 'light',
         semanticHighlighting: true,
-        colors: {
+        colors: mergeColors({
             'editor.background': palette.bg,
             'editor.foreground': palette.fg,
             ...bracketLevels
-        },
+        }, workbenchColors(), gitColors()),
         semanticTokenColors,
         tokenColors,
     };
+}
+
+function mergeColors(...maps: Record<string, string>[]) {
+    const out: Record<string, string> = {};
+    for (const m of maps) {
+        for (const [k, v] of Object.entries(m)) {
+            if (k in out) throw new Error(`duplicate color key ${k}`);
+            out[k] = v;
+        }
+    }
+    return out;
 }
 
 export const hexOf = (role: Role) => palette[roles[role]];

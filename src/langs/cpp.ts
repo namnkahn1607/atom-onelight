@@ -2,7 +2,7 @@ import type { Bindings } from "../roles";
 
 export const cpp : Bindings = {
     affix: { tm: ['keyword.other.unit'] },
-    attribute: { tm: ['support.other.attribute'] },
+    attribute: { tm: ['support.other.attribute', 'entity.other.attribute-name'] },
     comment: { tm: ['comment'] },
     declarator: { tm: ['storage.modifier.pointer', 'storage.modifier.reference'] },
     enumMember: { tm: ['variable.other.enummember'], semantic: ['enumMember'] },
@@ -19,7 +19,6 @@ export const cpp : Bindings = {
             'storage.modifier',  // const, constexpr, static, inline, virtual, noexcept, override
             'constant.language',  // true, false, nullptr
             'variable.language',  // this
-            'entity.other.attribute-name',  // #pragma once
             'entity.name.operator.type',  // operator bool
         ],
         semantic: [
