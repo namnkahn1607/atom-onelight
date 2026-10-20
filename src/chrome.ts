@@ -46,6 +46,7 @@ export function workbenchColors(): Record<string, string> {
         'editor.findMatchBackground': alpha(accent, 0x66),
         'editor.findMatchHighlightBackground': alpha(accent, 0x33),
         'editor.lineHighlightBackground': alpha(text, 0x0c),
+        'editor.rangeHighlightBackground': alpha(accent, 0x33),
         'editor.selectionBackground': selection,
         'editor.wordHighlightTextBackground': alpha(accent, 0x33),
         'editorCursor.foreground': accent,
