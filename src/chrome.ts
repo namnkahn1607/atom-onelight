@@ -77,6 +77,7 @@ export function workbenchColors(): Record<string, string> {
 
         'list.activeSelectionBackground': alpha(text, 0x20),
         'list.activeSelectionForeground': ink,
+        'list.errorForeground': status.conflict,  // useing color from status palette
         'list.focusBackground': alpha(text, 0x20),
         'list.hoverBackground': alpha(text, 0x0d),
         'list.highlightForeground': ink,

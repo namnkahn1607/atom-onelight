@@ -54,6 +54,7 @@
     "input.border": "#dbdbdc",
     "list.activeSelectionBackground": "#383a4220",
     "list.activeSelectionForeground": "#121417",
+    "list.errorForeground": "#d4264b",
     "list.focusBackground": "#383a4220",
     "list.hoverBackground": "#383a420d",
     "list.highlightForeground": "#121417",
