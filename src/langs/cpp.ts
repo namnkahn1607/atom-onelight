@@ -14,6 +14,7 @@ export const cpp : Bindings = {
     keyword: {
         tm: [
             'keyword.control',  // incl. preprocessor directives
+            'keyword.operator.noexcept',
             'keyword.other',  // using, default, namespace, operator, decltype, static_assert
             'storage.type',  // class, struct, enum, template, namespace, access-specifiers, decltype
             'storage.modifier',  // const, constexpr, static, inline, virtual, noexcept, override
@@ -28,20 +29,33 @@ export const cpp : Bindings = {
         ],
     },
     macro: { tm: ['entity.name.function.preprocessor'], semantic: ['macro'] },
-    number: { tm: ['constant.numeric'] },
+    number: {
+        tm: [
+            'constant.numeric',
+            'meta.function.definition.parameters.special.constructor meta.parameter',
+        ],
+    },
     operator: {
-        tm: ['keyword.operator', 'entity.name.operator'],
+        tm: [
+            'keyword.operator',
+            'entity.name.operator',
+            'punctuation.separator.pointer-access',
+            'punctuation.separator.dot-access',
+        ],
         semantic: ['operator'],
     },
     parameter: { tm: ['variable.parameter'], semantic: ['parameter'] },
     placeholder: { tm: ['constant.other.placeholder'] },
     plain: {
         tm: ['variable.parameter.preprocessor', 'variable.parameter.capture', 'punctuation.section.attribute'],
-        semantic: ['bracket', 'label', 'namespace', 'property', 'variable'],
+        semantic: ['bracket', 'label', 'namespace', 'variable'],
     },
     string: { tm: ['string'] },
     type: {
-        tm: ['entity.name.type'],
+        tm: [
+            'entity.name.type',
+            'entity.name.scope-resolution.function.definition',
+        ],
         semantic: ['type', 'class', 'enum', 'struct', 'interface', 'typeParameter'],
     },
 }

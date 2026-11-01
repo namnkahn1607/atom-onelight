@@ -113,7 +113,6 @@
     "namespace": "#383a42",
     "operator": "#e45649",
     "parameter": "#0184bc",
-    "property": "#383a42",
     "struct": "#df8e1d",
     "type": "#df8e1d",
     "type.deduced": "#a626a4",
@@ -199,6 +198,7 @@
         "constant.language",
         "entity.name.operator.type",
         "keyword.control",
+        "keyword.operator.noexcept",
         "keyword.other",
         "storage.modifier",
         "storage.type",
@@ -220,7 +220,8 @@
     {
       "name": "number",
       "scope": [
-        "constant.numeric"
+        "constant.numeric",
+        "meta.function.definition.parameters.special.constructor meta.parameter"
       ],
       "settings": {
         "foreground": "#df8e1d"
@@ -230,7 +231,9 @@
       "name": "operator",
       "scope": [
         "entity.name.operator",
-        "keyword.operator"
+        "keyword.operator",
+        "punctuation.separator.dot-access",
+        "punctuation.separator.pointer-access"
       ],
       "settings": {
         "foreground": "#e45649"
@@ -277,6 +280,7 @@
     {
       "name": "type",
       "scope": [
+        "entity.name.scope-resolution.function.definition",
         "entity.name.type"
       ],
       "settings": {
