@@ -1,0 +1,10 @@
+diff --git a/src/langs/cpp.ts b/src/langs/cpp.ts
+--- a/src/langs/cpp.ts
++++ b/src/langs/cpp.ts
+@@ -36,6 +36,4 @@
+         tm: [
+             'keyword.operator',
+             'entity.name.operator',
+-            'punctuation.separator.pointer-access',
+-            'punctuation.separator.dot-access',
+         ],
