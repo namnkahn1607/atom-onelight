@@ -27,7 +27,8 @@
   "scripts": {
     "build": "tsx src/build.ts",
     "check": "tsc --noEmit",
-    "package": "npm run build && vsce package --skip-license"
+    "package": "npm run build && vsce package --skip-license",
+    "tokdump": "tsx utils/tokdump/cli.ts"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",
