@@ -1,0 +1,287 @@
+%YAML 1.2
+%TAG !e! tag:example.com,2026:
+---
+# ============================================================
+# sample.yaml - YAML token fixture (documents 1..N)
+# ============================================================
+
+comments:
+  # full-line comment
+  key: value # trailing comment
+  hash_inside: a#b # no space before '#': part of the scalar
+  quoted_hash: "a # b" # '#' inside quotes is not a comment
+  url_fragment: http://example.com/page#section
+
+strings:
+  plain: hello world
+  plain_multiline: this plain scalar
+    continues on the next line
+    and one more
+  single: 'it''s single-quoted, \n is literal'
+  double: "tab\there, newline\n, quote \", unicode \u00e9 \U0001F680, hex \x41, nul \0"
+  double_multiline: "first line
+    second line"
+  single_multiline: 'first
+    second'
+  empty_single: ''
+  empty_double: ""
+  colon_in_value: http://localhost:8080/path
+  colon_quoted: "key: value"
+  dash_start: -not-a-sequence
+  reserved_quoted: "@at and `backtick` must be quoted at the start"
+  unicode: Hà Nội — ĐHQGHN 🚀
+  looks_like_number: "42"
+  looks_like_bool: 'true'
+  looks_like_null: "null"
+
+numbers:
+  int: 42
+  negative: -17
+  positive: +3
+  octal_1_2: 0o14
+  octal_1_1: 014
+  hex: 0xFF
+  float: 3.14159
+  exponent: 6.02e+23
+  exponent_negative: -1.5E-7
+  inf: .inf
+  neg_inf: -.inf
+  nan: .nan
+  underscored: 1_000_000
+  sexagesimal: 190:20:30
+  leading_zero_string: 0777
+  version_like: 1.2.3
+
+booleans_and_nulls:
+  t: true
+  f: false
+  cap_true: True
+  upper_false: FALSE
+  yes_word: yes
+  no_word: no # "Norway problem": bool in YAML 1.1, string in 1.2
+  on_word: on
+  off_word: off
+  null_word: null
+  null_tilde: ~
+  null_cap: Null
+  null_upper: NULL
+  null_empty:
+  bool_looking_string: "yes"
+
+timestamps:
+  date: 2026-11-03
+  datetime_utc: 2026-11-03T10:20:30Z
+  datetime_offset: 2026-11-03T17:20:30.5+07:00
+  spaced: 2026-11-03 17:20:30 +7
+
+block_scalars:
+  literal: |
+    line one
+      indented line
+    line three
+  literal_strip: |-
+    no trailing newline
+  literal_keep: |+
+    keeps trailing blank lines
+
+  folded: >
+    folded text becomes
+    one paragraph.
+
+    new paragraph
+  folded_strip: >-
+    folded and stripped
+  folded_keep: >+
+    folded and kept
+
+  explicit_indent: |2
+      two extra spaces preserved
+  shell: |
+    #!/usr/bin/env bash
+    set -euo pipefail
+    echo "# not a comment: this is inside a block scalar"
+  after: done
+
+flow:
+  seq: [a, b, c]
+  seq_mixed: [1, "two", 3.0, true, null, ~, [nested, seq], {k: v}]
+  map: {a: 1, b: 2, c: {d: 3}}
+  empty_seq: []
+  empty_map: {}
+  quoted_keys: {"a b": 1, 'c d': 2}
+  json_style: {"a":1,"b":[1,2,3]}
+  multiline_seq: [
+    one, two, # comment inside flow
+    three
+  ]
+  multiline_map: {
+    x: 1,
+    y: 2
+  }
+
+sequences:
+  - plain
+  - 42
+  - - nested
+    - sequence
+  - key: in a map
+    other: item
+  -
+    explicit: map on the next line
+  - |
+    literal block in a sequence
+  - >-
+    folded block in a sequence
+  - # comment as the only content on the entry line
+    value: below
+
+indentless_seq:
+- zero
+- indent
+- sequence
+
+mappings:
+  nested:
+    deeper:
+      deepest: [bottom]
+  "quoted key": 1
+  'single key': 2
+  key with spaces: 3
+  ? explicit key
+  : explicit value
+  ? |
+    block scalar key
+  : value for a block scalar key
+  123: numeric key
+  true: boolean key
+  ~: null as key
+  "": empty string key
+  a:b: colon without a space is part of the key
+  spaced:     many spaces before the value
+
+anchors:
+  base: &base
+    adapter: postgres
+    host: localhost
+    port: 5432
+  other: &other
+    pool: 5
+  scalar_anchor: &answer 42
+  seq_anchor: &list [a, b, c]
+  development:
+    <<: *base
+    database: dev_db
+  merged_many:
+    <<: [*base, *other]
+    database: test_db
+  alias_scalar: *answer
+  alias_seq: *list
+  in_sequence:
+    - &item first
+    - *item
+    - &pair {a: 1}
+    - *pair
+
+tags:
+  str: !!str 123
+  int: !!int "42"
+  float: !!float 1
+  bool: !!bool "true"
+  nul: !!null ""
+  timestamp: !!timestamp 2026-11-03
+  binary: !!binary |
+    aGVsbG8g
+    d29ybGQ=
+  set: !!set {a, b, c}
+  omap: !!omap
+    - first: 1
+    - second: 2
+  pairs: !!pairs
+    - k: 1
+    - k: 2
+  seq: !!seq [1, 2]
+  map: !!map {k: v}
+  verbatim: !<tag:yaml.org,2002:str> verbatim tag
+  custom: !custom value
+  custom_map: !custom
+    a: 1
+  namespaced: !e!thing value
+  tag_and_anchor: !!str &anch value
+  cfn_ref: !Ref MyBucket
+  cfn_sub: !Sub "${AWS::StackName}-bucket"
+  cfn_getatt: !GetAtt [MyBucket, Arn]
+  cfn_join: !Join ["", [a, b]]
+
+---
+# document 2: CI workflow (the realistic case)
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+env:
+  NODE_VERSION: "20"
+  CMAKE_BUILD_TYPE: Release
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+        node: [20, 22]
+        include:
+          - os: ubuntu-24.04
+            experimental: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        if: ${{ github.ref == 'refs/heads/main' && !cancelled() }}
+        run: |
+          npm ci
+          npm run build
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+---
+# document 3: Kubernetes manifest (anchors across nesting, flow maps)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  labels: &labels
+    app.kubernetes.io/name: app
+    app.kubernetes.io/part-of: demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels: *labels
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+        - name: app
+          image: "registry.example.com/app:1.0.0"
+          args: ["--port=8080", "--cache-size=512Mi"]
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            limits: {cpu: 500m, memory: 512Mi}
+          livenessProbe:
+            httpGet: {path: /healthz, port: 8080}
+            periodSeconds: 10
+
+--- "a top-level quoted scalar"
+--- |
+  a top-level block scalar
+--- !!map
+key: tagged document root
+--- &root
+anchored: root
+--- []
+--- {}
+--- # comment after the document start marker
+last: true
+...

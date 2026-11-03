@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@scope/atoms-one-light",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Fixture: every JSON token kind (keys, strings, numbers, literals, nesting)",
+  "engines": { "vscode": "^1.75.0", "node": ">=20.11.0 <23" },
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "verify": "tsx tools/verify.ts --snapshot > snapshot.md",
+    "package": "vsce package --skip-license --allow-missing-repository"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Atom's One Light",
+        "uiTheme": "vs",
+        "path": "./themes/atoms-one-light-color-theme.json"
+      }
+    ]
+  },
+  "files": ["themes/**", "assets/icon.png", "README.md"],
+
+  "literals": {
+    "yes": true,
+    "no": false,
+    "nothing": null
+  },
+
+  "numbers": {
+    "zero": 0,
+    "negativeZero": -0,
+    "int": 42,
+    "negative": -17,
+    "float": 3.14159,
+    "negativeFloat": -0.5,
+    "exponent": 1e10,
+    "exponentUpper": 1E5,
+    "exponentSigned": 6.02e+23,
+    "exponentNegative": -1.5e-7,
+    "fractionExponent": 0.1E-2,
+    "beyondSafeInteger": 9007199254740993,
+    "maxDouble": 1.7976931348623157e308,
+    "denormalMin": 5e-324
+  },
+
+  "strings": {
+    "empty": "",
+    "plain": "hello world",
+    "escapedQuote": "she said \"hi\"",
+    "backslash": "C:\\Users\\nlnk\\repo",
+    "solidus": "a\/b",
+    "controls": "\b\f\n\r\t",
+    "unicodeEscape": "caf\u00e9 \u4e2d\u6587",
+    "surrogatePair": "\ud83d\ude80",
+    "escapedBackslashThenU": "\\u0041 stays literal",
+    "unicodeLiteral": "Hà Nội — Đại học Công nghệ, ĐHQGHN 🚀",
+    "looksLikeNumber": "42",
+    "looksLikeLiteral": "true",
+    "looksLikeKeyValue": "key: value, other: 1",
+    "looksLikeComment": "// not a comment /* nor this */",
+    "looksLikeUrl": "https://example.com:8080/a/b?q=1&r=2#frag",
+    "looksLikeBrackets": "[1, 2, {\"a\": null}]",
+    "regex": "^\\d{3}-\\d{4}$",
+    "printf": "%s took %.2f ms (%d%%)"
+  },
+
+  "keys": {
+    "plain": 1,
+    "snake_case": 2,
+    "kebab-case": 3,
+    "camelCase": 4,
+    "with space": 5,
+    "dotted.key.path": 6,
+    "@scope/pkg": 7,
+    "$ref": 8,
+    "#anchor": 9,
+    "": 10,
+    "true": 11,
+    "null": 12,
+    "123": 13,
+    "-1.5": 14,
+    "esc\"aped": 15,
+    "tab\tkey": 16,
+    "\u00e9\u00e8": 17,
+    "ключ": 18,
+    "key with // slashes": 19
+  },
+
+  "arrays": {
+    "empty": [],
+    "ints": [1, 2, 3],
+    "singleLine": ["a", "b", "c"],
+    "mixed": [1, "two", 3.0, true, null, { "six": 6 }, [7]],
+    "matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+    "objects": [
+      { "id": 1, "tags": ["x", "y"] },
+      { "id": 2, "tags": [] }
+    ],
+    "multiLine": [
+      "first",
+      "second",
+      "third"
+    ]
+  },
+
+  "nesting": {
+    "l1": { "l2": { "l3": { "l4": { "l5": { "l6": { "l7": [[[["bottom"]]]] } } } } } }
+  },
+
+  "compact": {"emptyObject":{},"emptyArray":[],"a":1,"b":[1,2,3],"c":{"d":null,"e":"f"},"g":-1.5e3,"h":true}
+}
