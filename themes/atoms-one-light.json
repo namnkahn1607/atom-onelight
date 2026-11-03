@@ -261,6 +261,8 @@
       "name": "plain",
       "scope": [
         "punctuation.section.attribute",
+        "punctuation.separator.delimiter.comma",
+        "punctuation.separator.parameters",
         "variable.parameter.capture",
         "variable.parameter.preprocessor"
       ],

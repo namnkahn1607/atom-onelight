@@ -47,7 +47,13 @@ export const cpp : Bindings = {
     parameter: { tm: ['variable.parameter'], semantic: ['parameter'] },
     placeholder: { tm: ['constant.other.placeholder'] },
     plain: {
-        tm: ['variable.parameter.preprocessor', 'variable.parameter.capture', 'punctuation.section.attribute'],
+        tm: [
+            'variable.parameter.preprocessor',
+            'variable.parameter.capture',
+            'punctuation.section.attribute',
+            'punctuation.separator.delimiter.comma',
+            'punctuation.separator.parameters',
+        ],
         semantic: ['bracket', 'label', 'namespace', 'variable'],
     },
     string: { tm: ['string'] },
