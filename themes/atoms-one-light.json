@@ -295,6 +295,15 @@
       "settings": {
         "foreground": "#df8e1d"
       }
+    },
+    {
+      "name": "key",
+      "scope": [
+        "support.type.property-name"
+      ],
+      "settings": {
+        "foreground": "#e45649"
+      }
     }
   ]
 }
