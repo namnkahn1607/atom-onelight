@@ -1,7 +1,9 @@
 import { cpp } from './cpp';
-import { cmake } from './cmake';
 import { go } from './go'
 
-import { json } from './json'
+import { cmake } from './cmake';
 
-export const langs = { cpp, cmake, go, json };
+import { json } from './json'
+import { yaml } from './yaml'
+
+export const langs = { cpp, cmake, go, json, yaml };

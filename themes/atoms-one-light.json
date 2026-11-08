@@ -129,7 +129,9 @@
     {
       "name": "affix",
       "scope": [
-        "keyword.other.unit"
+        "entity.name.tag",
+        "keyword.other.unit",
+        "support.type.property-name"
       ],
       "settings": {
         "foreground": "#e45649"
@@ -290,19 +292,11 @@
         "entity.name.scope-resolution.function.definition",
         "entity.name.type",
         "support.type.property.cmake",
+        "support.type.tag-prefix",
         "support.type.variable.cmake"
       ],
       "settings": {
         "foreground": "#df8e1d"
-      }
-    },
-    {
-      "name": "key",
-      "scope": [
-        "support.type.property-name"
-      ],
-      "settings": {
-        "foreground": "#e45649"
       }
     }
   ]
