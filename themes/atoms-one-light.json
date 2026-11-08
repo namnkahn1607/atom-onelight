@@ -199,6 +199,7 @@
       "scope": [
         "constant.language",
         "entity.name.operator.type",
+        "keyword",
         "keyword.control",
         "keyword.operator.noexcept",
         "keyword.other",
