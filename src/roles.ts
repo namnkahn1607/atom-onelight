@@ -2,7 +2,6 @@ import type { Hue } from './palette'
 
 // Role = meaning (language-agnostic). Hue = presentation.
 export const roles = {
-    // Language
     affix: 'orange',  // number prefix/suffix
     attribute: 'cyan',
     comment: 'gray',
@@ -19,9 +18,6 @@ export const roles = {
     plain: 'fg',
     string: 'green',
     type: 'yellow',  // explicit "no color"
-
-    // Non-language
-    key: 'orange',
 } as const satisfies Record<string, Hue>;
 
 export type Role = keyof typeof roles;
