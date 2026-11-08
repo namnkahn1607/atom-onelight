@@ -139,6 +139,7 @@
       "name": "attribute",
       "scope": [
         "entity.other.attribute-name",
+        "support.function.commandProperty.cmake",
         "support.other.attribute"
       ],
       "settings": {
@@ -186,7 +187,8 @@
     {
       "name": "function",
       "scope": [
-        "entity.name.function"
+        "entity.name.function",
+        "support.function.cmake"
       ],
       "settings": {
         "foreground": "#4078f2"
@@ -263,6 +265,7 @@
         "punctuation.section.attribute",
         "punctuation.separator.delimiter.comma",
         "punctuation.separator.parameters",
+        "variable.other",
         "variable.parameter.capture",
         "variable.parameter.preprocessor"
       ],
@@ -273,7 +276,8 @@
     {
       "name": "string",
       "scope": [
-        "string"
+        "string",
+        "variable.parameter.cmake"
       ],
       "settings": {
         "foreground": "#50a14f"
@@ -283,7 +287,9 @@
       "name": "type",
       "scope": [
         "entity.name.scope-resolution.function.definition",
-        "entity.name.type"
+        "entity.name.type",
+        "support.type.property.cmake",
+        "support.type.variable.cmake"
       ],
       "settings": {
         "foreground": "#df8e1d"

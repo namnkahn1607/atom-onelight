@@ -1,2 +1,3 @@
 import { cpp } from './cpp';
-export const langs = { cpp };
+import { cmake } from './cmake';
+export const langs = { cpp, cmake };
